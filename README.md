@@ -1,23 +1,29 @@
-# Rslib Project
+# Rsbuild Utils
 
-## Setup
+Helper functions for setting up custom chunks in [Rsbuild](https://rsbuild.dev/).
+Supports only [PNPM](https://pnpm.io/) for now.
 
-Install the dependencies:
+## Installation
 
 ```bash
-pnpm install
+pnpm add -D @mutsuntsai/rsbuild-utils
 ```
 
-## Get Started
+## Usage
 
-Build the library:
+```ts
+/**
+ * Create a test function such that it returns true if and only if
+ * the module matches any of the given {@link RegExp}s.
+ */
+export declare function makeTest(...tests: RegExp[]): (m: unknown) => boolean;
 
-```bash
-pnpm build
-```
-
-Build the library in watch mode:
-
-```bash
-pnpm dev
+/**
+ * Based on the dependencies recorded in `pnpm-lock.yaml` file,
+ * create a {@link RegExp} that covers all descendant packages of the given packages.
+ *
+ * Note that this function has a side-effect: it will not include
+ * packages that were collected during previous calls of this function.
+ */
+export declare function createDescendantRegExp(...names: string[]): RegExp;
 ```
