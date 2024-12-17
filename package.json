@@ -1,0 +1,39 @@
+{
+	"name": "@mutsuntsai/rsbuild-utils",
+	"version": "1.0.0",
+	"type": "module",
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.js",
+			"require": "./dist/index.cjs"
+		}
+	},
+	"author": "Mu-Tsun Tsai <don.m.t.tsai@gmail.com> (https://github.com/MuTsunTsai)",
+	"repository": "github:MuTsunTsai/rsbuild-utils",
+	"license": "MIT",
+	"main": "./dist/index.cjs",
+	"module": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"files": [
+		"dist"
+	],
+	"scripts": {
+		"build": "rslib build",
+		"dev": "rslib build --watch",
+		"lint": "eslint ."
+	},
+	"devDependencies": {
+		"@eslint/js": "^9.12.0",
+		"@rslib/core": "^0.1.4",
+		"@rspack/core": "^1.1.6",
+		"@types/node": "^22.8.1",
+		"eslint": "^9.12.0",
+		"globals": "^15.11.0",
+		"typescript": "^5.6.3",
+		"typescript-eslint": "^8.8.1"
+	},
+	"dependencies": {
+		"yaml": "^2.6.1"
+	}
+}
